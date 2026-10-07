@@ -1,0 +1,15 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Local development tools and test data stay out of the repository
+dev/
+node_modules/
+
+# Packed extensions and signing keys
+*.zip
+*.crx
+*.pem

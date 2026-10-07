@@ -1,0 +1,8 @@
+{
+  "extName": {
+    "message": "GEO & Schema Checker by taismo"
+  },
+  "extDescription": {
+    "message": "Zeigt mit einem Klick Schema-Graph, Entität und KI-Lesbarkeit jeder Seite: JSON-LD, llms.txt, KI-Bots und SEO-Grundlagen."
+  }
+}

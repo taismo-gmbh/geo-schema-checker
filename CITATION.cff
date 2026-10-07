@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "GEO & Schema Checker by taismo"
+abstract: "Chrome extension that shows the schema graph, entity signals and AI readability of any web page in one click. It merges JSON-LD by @id, checks schema.org types, entity signals, robots.txt access for search and AI crawlers, llms.txt and SEO basics. All checks run locally in the browser."
+type: software
+license: MIT
+version: "1.0.0"
+url: "https://github.com/taismo-gmbh/geo-schema-checker"
+repository-code: "https://github.com/taismo-gmbh/geo-schema-checker"
+keywords:
+  - schema markup checker
+  - structured data
+  - json-ld
+  - schema.org
+  - generative engine optimization
+  - geo
+  - aeo
+  - ai search
+  - ai crawlers
+  - llms.txt
+  - entity
+  - knowledge graph
+  - chrome extension
+authors:
+  - family-names: "Breitbach"
+    given-names: "Dominik"
+    orcid: "https://orcid.org/0009-0004-4460-2828"
+    affiliation: "taismo GmbH"
+    website: "https://taismo.de/autor/dominik-breitbach/"
+  - name: "taismo GmbH"
+    city: "München"
+    country: "DE"
+    website: "https://taismo.de/"
+    email: "info@taismo.de"
+contact:
+  - name: "taismo GmbH"
+    city: "München"
+    country: "DE"
+    website: "https://taismo.de/"
+    email: "info@taismo.de"
