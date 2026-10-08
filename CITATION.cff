@@ -5,6 +5,7 @@ abstract: "Chrome extension that shows the schema graph, entity signals and AI r
 type: software
 license: MIT
 version: "1.0.0"
+date-released: "2026-10-08"
 url: "https://github.com/taismo-gmbh/geo-schema-checker"
 repository-code: "https://github.com/taismo-gmbh/geo-schema-checker"
 keywords:

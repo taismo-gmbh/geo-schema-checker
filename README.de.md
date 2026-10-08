@@ -2,8 +2,6 @@
 
 [English](README.md) · **Deutsch**
 
-<!-- Die Landingpage https://taismo.de/schema-checker/ ist noch nicht live. Am Launch-Tag hier, unter „Installation“ und unter „Über taismo“ verlinken. -->
-
 **Der GEO & Schema Checker by taismo ist eine kostenlose Chrome-Erweiterung, die mit einem Klick den Schema-Graphen, die Entitätssignale und die KI-Lesbarkeit jeder Webseite zeigt.** Sie liest das JSON-LD des offenen Tabs, führt es über `@id` so zusammen, wie Google es tut, und prüft, ob Suchmaschinen und KI-Crawler die Seite überhaupt lesen dürfen. Jede Prüfung läuft lokal in deinem Browser.
 
 Die Erweiterung ist für SEOs, Entwickler und Redaktionen gemacht, die mit strukturierten Daten arbeiten und eine Seite so sehen wollen, wie Google, ChatGPT, Perplexity und andere KI-Systeme sie sehen. Entwickelt hat sie [taismo](https://taismo.de/), die SEO- und GEO-Agentur aus München. Der Code steht unter der MIT-Lizenz.
@@ -14,6 +12,8 @@ Die Erweiterung ist für SEOs, Entwickler und Redaktionen gemacht, die mit struk
 - Nur zwei Berechtigungen: `activeTab` und `scripting`
 - Keine Daten verlassen deinen Browser
 - Oberfläche auf Deutsch und Englisch, je nach Browsersprache
+
+**[Kostenlos im Chrome Web Store installieren](https://chromewebstore.google.com/detail/geo-schema-checker-by-tai/nmddlaafhlfldaiccalieibgelmdddgn)** · [Der GEO & Schema Checker auf taismo.de](https://taismo.de/schema-checker/)
 
 ![GEO & Schema Checker, Reiter Schema: Das JSON-LD eines Beispielartikels, über @id zu einem Baum aus WebPage, BlogPosting, Person und Organization zusammengeführt, jeder Knoten mit Ampel](docs/screenshots/screenshot-1.png)
 
@@ -106,7 +106,8 @@ Der GEO & Schema Checker hat keinen Server, kein Konto und keine Webanalyse.
 - **Zwei Berechtigungen.** `activeTab` gibt erst dann Zugriff auf den aktuellen Tab, wenn du auf das Icon klickst, und `scripting` erlaubt der Erweiterung, diese Seite zu lesen. Es gibt keine Host-Berechtigungen und keinen Zugriff auf andere Tabs, deinen Verlauf oder deine Lesezeichen.
 - **Keine Datenübertragung.** Nichts über die geprüfte Seite, dein Surfverhalten oder deine Einstellungen geht an taismo oder an Dritte.
 - **Keine Cookies, kein Speicher.** Die Erweiterung setzt keine Cookies und speichert nichts.
-- **Abrufe gehen nur an die geprüfte Website.** Die Erweiterung lädt die Seite noch einmal von derselben Website, mit der Sitzung, die dein Tab ohnehin hat, um das ausgelieferte HTML mit der gerenderten Seite zu vergleichen. Außerdem fragt sie dort `/robots.txt`, `/llms.txt`, `/sitemap.xml` und `/sitemap_index.xml` ab.
+- **Abrufe gehen an die geprüfte Website.** Die Erweiterung lädt die Seite noch einmal von derselben Website, mit der Sitzung, die dein Tab ohnehin hat, um das ausgelieferte HTML mit der gerenderten Seite zu vergleichen. Außerdem fragt sie dort `/robots.txt`, `/llms.txt`, `/sitemap.xml` und `/sitemap_index.xml` ab.
+- **Logo aus dem Schema.** Nennt das Schema der Seite ein Logo, zeigt der Reiter Entität dieses Bild. Dein Browser lädt es von der Adresse, die im Schema steht; das kann auch ein anderer Server als die geprüfte Website sein.
 - **Links öffnen sich nur per Klick.** Rich-Results-Test und Schema Markup Validator erhalten die URL der geprüften Seite erst beim Klick. Links auf taismo.de tragen UTM-Parameter, damit wir Besuche aus der Erweiterung in unserer eigenen Webanalyse zählen können.
 - **Begrüßungs- und Feedbackseite.** `src/background.js` enthält eine Begrüßungsseite nach der Installation und eine Feedbackseite nach dem Entfernen, beide auf taismo.de. In Version 1.0.0 sind beide ausgeschaltet (`PAGES_LIVE = false`).
 
@@ -116,9 +117,7 @@ Jede dieser Aussagen lässt sich im Quellcode nachprüfen.
 
 ### Aus dem Chrome Web Store
 
-<!-- Platzhalter unten am Launch-Tag durch den Link zum Chrome Web Store ersetzen. -->
-
-> **Chrome Web Store: Link folgt zum Start.** Die Erweiterung ist in der Prüfung. Bis dahin lädst du sie als entpackte Erweiterung.
+Die Erweiterung steht kostenlos im Chrome Web Store: **[GEO & Schema Checker by taismo installieren](https://chromewebstore.google.com/detail/geo-schema-checker-by-tai/nmddlaafhlfldaiccalieibgelmdddgn)**. Nach der Installation heftest du die Katze über das Puzzle-Symbol in der Symbolleiste an und klickst sie auf einer beliebigen Seite an. Mehr zur Erweiterung steht auf der [Seite zum GEO & Schema Checker](https://taismo.de/schema-checker/).
 
 Browser auf Chromium-Basis wie Microsoft Edge, Brave, Opera und Vivaldi installieren Erweiterungen ebenfalls aus dem Chrome Web Store.
 
@@ -167,7 +166,7 @@ Pull Requests nehmen wir gern an, wenn sie drei Grundsätze einhalten: Keine neu
 Ja. Die Erweiterung ist kostenlos, braucht kein Konto und ist Open Source unter der MIT-Lizenz.
 
 **Sendet die Erweiterung Daten an taismo oder an andere?**
-Nein. Alle Prüfungen laufen lokal, und die einzigen Abrufe gehen an die Website, die du gerade prüfst.
+Nein. Alle Prüfungen laufen lokal. Abrufe gehen an die Website, die du gerade prüfst, und an die Adresse des Logos, das diese Seite in ihrem Schema nennt.
 
 **Ersetzt die Erweiterung den Rich-Results-Test von Google?**
 Sie ergänzt ihn. Die Erweiterung zeigt mit einem Klick den ganzen Schema-Graphen samt Entitäts- und KI-Signalen; ob eine Seite für ein bestimmtes Rich Result infrage kommt, sagt dir der Rich-Results-Test, der im Reiter Schema verlinkt ist.
@@ -188,7 +187,7 @@ Generative Engine Optimization (GEO) macht eine Website in KI-Antworten sichtbar
 
 Die [taismo GmbH](https://taismo.de/) ist eine SEO- und GEO-Agentur aus München, gegründet 2019. Wir machen Unternehmen bei Google und in KI-Systemen sichtbar, über die ganze Breite der Suchmaschinenoptimierung: Strategie, Content, interne Struktur, Technik und strukturierte Daten. Wir arbeiten für Unternehmen mit umkämpftem Markt und erklärungsbedürftiger Leistung, mit Schwerpunkt B2B und Mittelstand.
 
-Der GEO & Schema Checker bringt Prüfungen in den Browser, die wir jeden Tag für unsere Kunden fahren. Wenn eine Seite nicht reicht:
+Der [GEO & Schema Checker](https://taismo.de/schema-checker/) bringt Prüfungen in den Browser, die wir jeden Tag für unsere Kunden fahren. Wenn eine Seite nicht reicht:
 
 - Der [kostenlose GEO-Check](https://taismo.de/seo-magazin/seo-und-geo-check/) prüft, ob eine URL in KI-Antworten zitiert werden kann.
 - Das [GEO-Audit](https://taismo.de/geo-audit/) misst die KI-Sichtbarkeit einer ganzen Website, Unterseite für Unterseite.

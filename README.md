@@ -2,8 +2,6 @@
 
 **English** · [Deutsch](README.de.md)
 
-<!-- Landing page https://taismo.de/schema-checker/ (EN: https://taismo.de/en/schema-checker/) is not live yet. Link it here, in "Installation" and in "About taismo" on launch day. -->
-
 **GEO & Schema Checker by taismo is a free Chrome extension that shows the schema graph, the entity signals and the AI readability of any web page in one click.** It reads the JSON-LD of the open tab, merges it by `@id` the way Google does, and checks whether search engines and AI crawlers may read the page at all. Every check runs locally in your browser.
 
 The extension is made for SEOs, developers and content teams who work with structured data and want to see a page the way Google, ChatGPT, Perplexity and other AI systems see it. It is developed by [taismo](https://taismo.de/en/), an SEO and GEO agency from Munich, and published under the MIT License.
@@ -14,6 +12,8 @@ The extension is made for SEOs, developers and content teams who work with struc
 - Two permissions only: `activeTab` and `scripting`
 - No data leaves your browser
 - Interface in English and German, following your browser language
+
+**[Install it free from the Chrome Web Store](https://chromewebstore.google.com/detail/geo-schema-checker-by-tai/nmddlaafhlfldaiccalieibgelmdddgn)** · [GEO & Schema Checker on taismo.de](https://taismo.de/en/schema-checker/)
 
 ![GEO & Schema Checker, Schema tab: the JSON-LD of an example article merged by @id into a tree of WebPage, BlogPosting, Person and Organization, each node with a traffic light](docs/screenshots/screenshot-1-en.png)
 
@@ -106,7 +106,8 @@ The GEO & Schema Checker has no server, no account and no analytics.
 - **Two permissions.** `activeTab` grants access to the current tab only after you click the icon, and `scripting` lets the extension read that page. There are no host permissions and no access to other tabs, your history or your bookmarks.
 - **No data transfer.** Nothing about the checked page, your browsing or your settings is sent to taismo or to third parties.
 - **No cookies, no storage.** The extension sets no cookies and stores nothing.
-- **Requests go only to the checked website.** The extension loads the page once more from the same site, with the session your tab already has, to compare the delivered HTML with the rendered page. It also requests `/robots.txt`, `/llms.txt`, `/sitemap.xml` and `/sitemap_index.xml` from that site.
+- **Requests go to the checked website.** The extension loads the page once more from the same site, with the session your tab already has, to compare the delivered HTML with the rendered page. It also requests `/robots.txt`, `/llms.txt`, `/sitemap.xml` and `/sitemap_index.xml` from that site.
+- **Logo from the schema.** If the page's schema names a logo, the Entity tab shows that image. Your browser loads it from the address given in the schema, which may be a different server than the checked website.
 - **Links open only when you click them.** The Rich Results Test and the Schema Markup Validator receive the URL of the checked page on click. Links to taismo.de carry UTM parameters, so we can count visits from the extension in our own web analytics.
 - **Welcome and feedback page.** `src/background.js` contains a welcome page after installation and a feedback page after removal, both on taismo.de. Both are switched off in version 1.0.0 (`PAGES_LIVE = false`).
 
@@ -116,9 +117,7 @@ Every statement can be verified in the source code.
 
 ### From the Chrome Web Store
 
-<!-- Replace the placeholder below with the Chrome Web Store link on launch day. -->
-
-> **Chrome Web Store: link follows at launch.** The extension is in review. Until then, load it as an unpacked extension.
+The extension is free in the Chrome Web Store: **[install GEO & Schema Checker by taismo](https://chromewebstore.google.com/detail/geo-schema-checker-by-tai/nmddlaafhlfldaiccalieibgelmdddgn)**. After installing, pin the cat via the puzzle icon in your toolbar and click it on any page. More about the extension on the [GEO & Schema Checker page](https://taismo.de/en/schema-checker/).
 
 Chromium-based browsers such as Microsoft Edge, Brave, Opera and Vivaldi can install extensions from the Chrome Web Store as well.
 
@@ -167,7 +166,7 @@ Pull requests are welcome when they follow three principles: no new permissions,
 Yes. The extension is free, needs no account and is open source under the MIT License.
 
 **Does the extension send data to taismo or anyone else?**
-No. All checks run locally, and the only network requests go to the website you are checking.
+No. All checks run locally. Network requests go to the website you are checking and to the address of the logo that this page names in its schema.
 
 **Does it replace Google's Rich Results Test?**
 It complements it. The extension shows the whole schema graph plus entity and AI signals in one click; the Rich Results Test, linked in the Schema tab, tells you whether a page qualifies for a specific rich result.
@@ -188,7 +187,7 @@ Generative engine optimization (GEO) makes a website visible in AI answers from 
 
 [taismo GmbH](https://taismo.de/en/) is an SEO and GEO agency from Munich, founded in 2019. We make companies visible on Google and in AI systems across the full breadth of search engine optimization: strategy, content, internal structure, technology and structured data. Our focus is B2B and mid-sized businesses in competitive markets whose services need explaining.
 
-The GEO & Schema Checker puts checks we run for clients every day into the browser. When one page is not enough:
+The [GEO & Schema Checker](https://taismo.de/en/schema-checker/) puts checks we run for clients every day into the browser. When one page is not enough:
 
 - The [free AI Visibility Checker](https://taismo.de/en/seo-magazine/seo-and-geo-check/) tests whether a URL can be cited in AI answers.
 - The [GEO audit](https://taismo.de/en/geo-audit/) measures the AI visibility of a whole website, subpage by subpage.
